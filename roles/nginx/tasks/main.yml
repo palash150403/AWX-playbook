@@ -1,5 +1,10 @@
 ---
 # tasks file for nginx
+- name: Update apt cache
+  ansible.builtin.apt:
+    update_cache: yes
+  become: true
+  
 - name: Install nginx
   ansible.builtin.package:
     name: nginx
